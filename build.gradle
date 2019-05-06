@@ -1,10 +1,12 @@
 plugins {
     id 'org.springframework.boot' version '2.1.4.RELEASE'
+    id "com.diffplug.gradle.spotless" version "3.23.0"
     id 'java'
     id 'jacoco'
 }
 
 apply plugin: 'io.spring.dependency-management'
+apply plugin: "com.diffplug.gradle.spotless"
 apply plugin: 'jacoco'
 
 group = 'io.integral.gradle'
@@ -20,6 +22,12 @@ ext {
     set('azureVersion', '2.1.2')
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "com.microsoft.azure:azure-spring-boot-bom:${azureVersion}"
+    }
+}
+
 dependencies {
 //    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -32,18 +40,18 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.3.1'
 }
 
-dependencyManagement {
-    imports {
-        mavenBom "com.microsoft.azure:azure-spring-boot-bom:${azureVersion}"
+test {
+    useJUnitPlatform()
+}
+
+spotless {
+    java {
+        googleJavaFormat()
     }
 }
 
 jacoco {
     toolVersion = "0.8.3"
-}
-
-test {
-    useJUnitPlatform()
 }
 
 jacocoTestCoverageVerification {
