@@ -48,12 +48,12 @@ jacocoTestCoverageVerification {
 ```
 ### Running
 
-To ensure JaCoCo gets installed in your project first run:
+- [ ] To ensure JaCoCo gets installed in your project first run:
 ```bash
 ./gradlew build
 ```
 
-To execute coverage run:
+- [ ] To execute coverage run:
 ```bash
 ./gradlew build jacocoTestReport
 ```
@@ -91,22 +91,24 @@ spotless {
 
 ### IntelliJ Installation
 
--[ ] Go to `Preferences/Settings-> Plugins -> browse repositories` and search for `google-java-format`
--[ ] Install the plugin.
--[ ] Restart IntelliJ.
--[ ] Go to `Preferences/Settings-> Other Settings-> google-java-format Settings` and `enable google-java-format`
--[ ] download and save [Google Java IntelliJ Style File](https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml)
--[ ] Go to `Preferences/Settings-> Settings-> Editor -> CodeStyle`
--[ ] Import the style file from wherever you downloaded it.
+- [ ] Go to `Preferences/Settings-> Plugins -> browse repositories` and search for `google-java-format`
+- [ ] Install the plugin.
+- [ ] Restart IntelliJ.
+- [ ] Go to `Preferences/Settings-> Other Settings-> google-java-format Settings` and `enable google-java-format`
+- [ ] download and save [Google Java IntelliJ Style File](https://raw.githubusercontent.com/google/styleguide/gh-pages/intellij-java-google-style.xml)
+- [ ] Go to `Preferences/Settings-> Settings-> Editor -> CodeStyle`
+- [ ] Import the style file from wherever you downloaded it.
 
 ### Running Google format
 #### IntelliJ
 use the following key commands in any file you want to run it:
-Mac: option + command + L
-Windows: ctrl + alt + L 
+
+Mac: `option + command + L`
+
+Windows: `ctrl + alt + L `
 
 #### Gradle
--[ ] in terminal run the following command:`./gradlew build`
+- [ ] in terminal run the following command:`./gradlew build`
 
 if you see someting like this:
 ```
@@ -119,7 +121,7 @@ Execution failed for task ':spotlessJava'.
           @@ -5,7 +5,7 @@
 ...
 ```
--[ ] in terminal run the following command:` ./gradlew spotlessApply`
+- [ ] in terminal run the following command:` ./gradlew spotlessApply`
 
 as long as that was your only issue you, you should see something like this:
 ```
